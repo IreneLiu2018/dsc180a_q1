@@ -1,4 +1,0 @@
-{
-    "dockerhub-id": "sjliuirene/dsc180a:tagname",
-    "build-script": "python run.py"
-}

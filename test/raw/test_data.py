@@ -7,7 +7,7 @@ data_file = open("../../data/raw"+"/final_hdsi_faculty_updated.csv", "r")
 
 df = pd.read_csv(data_file)
 
-df_test = df.sample(frac=0.5, random_state=1, ignore_index=True)
+df_test = df.sample(frac=0.1, random_state=1, ignore_index=True)
 
 # ---------------
 print('export test.csv to test/raw folder')

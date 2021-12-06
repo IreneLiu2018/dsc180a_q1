@@ -71,7 +71,9 @@ def main(targets):
         viz_prepare(**viz_cfg)
 
     if 'dashboard' in targets:
-        run_dashboard()
+        with open('config/dash-params.json') as fh:
+            dash_cfg = json.load(fh)
+        run_dashboard(**dash_cfg)
 
     if 'test' in targets:
         with open('config/test-process-params.json') as fh:
@@ -86,7 +88,9 @@ def main(targets):
             viz_cfg = json.load(fh)
         viz_prepare(**viz_cfg)
 
-        run_dashboard()
+        with open('config/test-dash-params.json') as fh:
+            dash_cfg = json.load(fh)
+        run_dashboard(**dash_cfg)
 
     return 
 

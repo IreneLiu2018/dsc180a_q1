@@ -14,7 +14,7 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 YEAR = 2015
 NUMBER_OF_YEAR = 7
 
-def viz_prepare(dataframe_path, processed_data_path, models_path, results_path, names_path, authors_path, missing_author_years_path, number_of_authors, raw_data_path, topics_range):
+def viz_prepare(dataframe_path, processed_data_path, models_path, results_path, names_path, authors_path, missing_author_years_path, number_of_authors, raw_data_path, topics_range, folder, org_data):
   data = pickle.load(open(dataframe_path, 'rb'))
 
   all_docs = pickle.load(open(processed_data_path, 'rb'))
@@ -234,21 +234,21 @@ def viz_prepare(dataframe_path, processed_data_path, models_path, results_path, 
 
   print('sankey diagram for different numbers of topics DONE')
 
-  pickle.dump(figs, open('data/sankey_dash/figs.pkl', 'wb'))
-  pickle.dump(tops, open('data/sankey_dash/tops.pkl', 'wb'))
-  pickle.dump(top_words, open('data/sankey_dash/top_words.pkl', 'wb'))
-  pickle.dump(author_list, open('data/sankey_dash/author_list.pkl', 'wb'))
-  pickle.dump(labels, open('data/sankey_dash/labels.pkl', 'wb'))
-  pickle.dump(positions, open('data/sankey_dash/positions.pkl', 'wb'))
-  pickle.dump(sources, open('data/sankey_dash/sources.pkl', 'wb'))
-  pickle.dump(targets, open('data/sankey_dash/targets.pkl', 'wb'))
+  pickle.dump(figs, open('{}/sankey_dash/figs.pkl'.format(folder), 'wb'))
+  pickle.dump(tops, open('{}/sankey_dash/tops.pkl'.format(folder), 'wb'))
+  pickle.dump(top_words, open('{}/sankey_dash/top_words.pkl'.format(folder), 'wb'))
+  pickle.dump(author_list, open('{}/sankey_dash/author_list.pkl'.format(folder), 'wb'))
+  pickle.dump(labels, open('{}/sankey_dash/labels.pkl'.format(folder), 'wb'))
+  pickle.dump(positions, open('{}/sankey_dash/positions.pkl'.format(folder), 'wb'))
+  pickle.dump(sources, open('{}/sankey_dash/sources.pkl'.format(folder), 'wb'))
+  pickle.dump(targets, open('{}/sankey_dash/targets.pkl'.format(folder), 'wb'))
   
-  pickle.dump(locations, open('data/sankey_dash/locations.pkl', 'wb'))
-  pickle.dump(models, open('data/sankey_dash/models.pkl', 'wb'))
-  pickle.dump(names, open('data/sankey_dash/names.pkl', 'wb'))
+  pickle.dump(locations, open('{}/sankey_dash/locations.pkl'.format(folder), 'wb'))
+  pickle.dump(models, open('{}/sankey_dash/models.pkl'.format(folder), 'wb'))
+  pickle.dump(names, open('{}/sankey_dash/names.pkl'.format(folder), 'wb'))
 
-  combined = pd.read_csv('data/raw/final_hdsi_faculty_updated.csv')
-  pickle.dump(combined, open('data/sankey_dash/combined.pkl', 'wb'))
+  combined = pd.read_csv('{}/raw/{}'.format(folder, org_data))
+  pickle.dump(combined, open('{}/sankey_dash/combined.pkl'.format(folder), 'wb'))
 
   print('variables for sankey launch SAVED')
 

@@ -8,5 +8,7 @@
     "missing_author_years_path": "data/interim/missing_author_years.pkl",
     "number_of_authors": 50,
     "raw_data_path": "data/raw/final_hdsi_faculty_updated.csv",
-    "topics_range": [10,15,20,25,30]
+    "topics_range": [10,15,20,25,30],
+    "folder": "data",
+    "org_data": "final_hdsi_faculty_updated.csv"
 }

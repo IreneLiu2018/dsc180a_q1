@@ -13,7 +13,7 @@ import numpy as np
 def get_data(faculty_list, key, outpath=None):
 
 # 'data/raw/HDSI Faculty Council - Sheet1 - HDSI Faculty Council - Sheet1.csv'
-    researchers = pd.read_csv(faculty_list)
+    # researchers = pd.read_csv(faculty_list)
 
     ms_id = [2243367769, 2529224718] # justin, aaron
 

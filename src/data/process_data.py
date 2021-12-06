@@ -30,7 +30,8 @@ def data_cleaning(data_path):
     # 'data/raw/final_hdsi_faculty_updated.csv'
     print('get cleaned data ready for modeling')
 
-    data = pd.read_csv(data_path, index_col=0, error_bad_lines=False, delimiter=',', quotechar='"')
+    data = pd.read_csv(data_path)
+    # print(data)
     data = data[data['year'] >= YEAR]
     data['abstract'] = data['abstract'].apply(lambda x: '' if type(x) == float else x)
 
