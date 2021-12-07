@@ -1,0 +1,19 @@
+steps to use the link in dsmlp
+
+ssh into dsmlp
+
+launch-scipy-ml.sh -i sjliuirene/new:tagname
+
+# get the code from http://dsmlp-login.ucsd.edu:<code>/?token=....
+
+# then cd into the repo on dsmlp
+
+# on a different terminal, run:
+
+ssh -N -L 8050:127.0.0.1:<code> sjliu@dsmlp-login.ucsd.edu
+
+# go back to the original terminal, now it is the target repo, run
+
+python run.py test
+
+# then open the chrome and use the link: localhost:8050
