@@ -33,18 +33,6 @@ def main(targets):
     `main` runs the targets in order of data=>analysis=>model.
     '''
 
-    # env_setup.make_datadir()
-    # env_setup.auth()
-
-    # if 'test' in targets:
-    #     with open('config/testdata-params.json') as fh:
-    #         data_cfg = json.load(fh)
-
-    #     # make the data target
-    #     df_test = pd.DataFrame.from_dict(data_cfg, orient="index").transpose()
-
-    #     print(df_test)
-
     if 'data' in targets:
         with open('config/data-params.json') as fh:
             etl_cfg = json.load(fh)
@@ -52,6 +40,9 @@ def main(targets):
         # make the data target
         data = get_data(**etl_cfg)
 
+        # since I am in charge of writing the second part of our code, my code has to combine with others to enable this functionality
+
+    # if you want to run the whole dataset, you can start from process_data
 
     if 'process_data' in targets:
         with open('config/process-params.json') as fh:

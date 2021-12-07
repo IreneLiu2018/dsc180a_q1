@@ -6,9 +6,9 @@
     "names_path": "test/processed/names.pkl",
     "authors_path": "test/interim/authors.pkl",
     "missing_author_years_path": "test/interim/missing_author_years.pkl",
-    "number_of_authors": 3,
-    "raw_data_path": "test/raw/test_data_new.csv",
+    "number_of_authors": 33,
+    "raw_data_path": "test/raw/test_data.csv",
     "topics_range": [10,15,20,25,30],
     "folder": "test",
-    "org_data": "test_data_new.csv"
+    "org_data": "test_data.csv"
 }
